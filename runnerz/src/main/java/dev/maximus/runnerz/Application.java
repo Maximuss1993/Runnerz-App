@@ -10,8 +10,8 @@ import org.springframework.web.client.RestClient;
 import org.springframework.web.client.support.RestClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
-import user.User;
-import user.UserHttpClient;
+import dev.maximus.runnerz.user.User;
+import dev.maximus.runnerz.user.UserHttpClient;
 
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;

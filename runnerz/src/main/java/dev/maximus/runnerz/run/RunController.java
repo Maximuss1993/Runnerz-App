@@ -1,4 +1,4 @@
-package run;
+package dev.maximus.runnerz.run;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;

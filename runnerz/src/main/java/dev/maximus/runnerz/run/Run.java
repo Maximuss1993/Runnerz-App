@@ -1,4 +1,4 @@
-package run;
+package dev.maximus.runnerz.run;
 
 import java.time.LocalDateTime;
 

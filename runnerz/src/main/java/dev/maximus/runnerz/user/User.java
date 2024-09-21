@@ -1,4 +1,4 @@
-package user;
+package dev.maximus.runnerz.user;
 
 public record User(
 		Integer id,

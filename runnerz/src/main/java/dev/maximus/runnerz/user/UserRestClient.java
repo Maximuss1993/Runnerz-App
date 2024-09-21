@@ -1,4 +1,4 @@
-package user;
+package dev.maximus.runnerz.user;
 
 import java.util.List;
 

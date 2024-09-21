@@ -1,4 +1,4 @@
-package run;
+package dev.maximus.runnerz.run;
 
 import java.util.List;
 import java.util.Optional;
