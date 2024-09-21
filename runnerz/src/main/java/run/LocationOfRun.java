@@ -1,4 +1,4 @@
-package dev.maximus.runnerz.run;
+package run;
 
 public enum LocationOfRun {
     INDOOR,

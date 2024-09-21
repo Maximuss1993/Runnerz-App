@@ -1,4 +1,4 @@
-package dev.maximus.runnerz.run;
+package run;
 
 
 import com.fasterxml.jackson.core.type.TypeReference;
