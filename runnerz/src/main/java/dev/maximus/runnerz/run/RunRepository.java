@@ -13,8 +13,8 @@ import java.util.Optional;
 @Repository
 public class RunRepository {
 
-	//private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(RunRepository.class);
-
+	@SuppressWarnings("unused")
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(RunRepository.class);
 	private final JdbcClient jdbcClient;
 
     public RunRepository(JdbcClient jdbcClient){
