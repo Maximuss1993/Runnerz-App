@@ -1,12 +1,15 @@
 package dev.maximus.runnerz.run;
 
 import java.time.LocalDateTime;
+
+import org.springframework.data.annotation.Id;
 import java.time.Duration;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Positive;
 
 public record Run(
+		@Id
         Integer id,
         @NotEmpty
         String title,
@@ -14,7 +17,7 @@ public record Run(
         LocalDateTime completedOn,
         @Positive
         Integer miles,
-        Location location
+        LocationOfRun location
 ) {
 
     public Run {

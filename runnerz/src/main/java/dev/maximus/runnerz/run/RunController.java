@@ -20,16 +20,16 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/runs")
-public class RunController {
+class RunController {
 
-    private final RunRepository runRepository;
+    private final JdbcRunRepository runRepository;
 
-    public RunController(RunRepository runRepository){
+    RunController(JdbcRunRepository runRepository) {
         this.runRepository = runRepository;
     }
 
-    @GetMapping("")
-    public List<Run> findAll(){
+    @GetMapping
+    List<Run> findAll() {
         return runRepository.findAll();
     }
 
