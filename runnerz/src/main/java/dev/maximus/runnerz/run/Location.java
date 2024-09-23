@@ -1,6 +1,6 @@
 package dev.maximus.runnerz.run;
 
-public enum LocationOfRun {
+public enum Location {
     INDOOR,
     OUTDOOR
 }

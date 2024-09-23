@@ -17,7 +17,7 @@ public record Run(
         LocalDateTime completedOn,
         @Positive
         Integer miles,
-        LocationOfRun location
+        Location location
 ) {
 
     public Run {
