@@ -1,10 +1,10 @@
 package dev.maximus.runnerz.user;
 
-public record AdressOfUser(
+public record Address(
 		String street,
 		String suite,
 		String city,
 		String zipcode,
-		GeoOfUser geo){
+		Geo geo){
 
 }

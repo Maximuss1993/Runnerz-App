@@ -2,36 +2,39 @@ package dev.maximus.runnerz.run;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
+import org.springframework.context.annotation.Import;
 
-import dev.maximus.runnerz.run.InMemoryRunRepository;
+import dev.maximus.runnerz.run.JdbcRunRepository;
 import dev.maximus.runnerz.run.Location;
 import dev.maximus.runnerz.run.Run;
-import dev.maximus.runnerz.run.RunNotFoundException;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
-class InMemoryRunRepositoryTest {
 
-    InMemoryRunRepository repository;
+@JdbcTest
+@Import(JdbcRunRepository.class)
+// @AutoConfigureTestDatabase(replace=Replace.NONE)
+class JdbcRunRepositoryTest {
+
+    @Autowired
+    JdbcRunRepository repository;
 
     @BeforeEach
     void setUp() {
-        repository = new InMemoryRunRepository();
-        repository.create(new Run(
-        		1,
+        repository.create(new Run(1,
                 "Monday Morning Run",
                 LocalDateTime.now(),
                 LocalDateTime.now().plus(30, ChronoUnit.MINUTES),
                 3,
                 Location.INDOOR));
 
-        repository.create(new Run(
-        		2,
+        repository.create(new Run(2,
                 "Wednesday Evening Run",
                 LocalDateTime.now(),
                 LocalDateTime.now().plus(60, ChronoUnit.MINUTES),
@@ -54,12 +57,8 @@ class InMemoryRunRepositoryTest {
 
     @Test
     void shouldNotFindRunWithInvalidId() {
-        RunNotFoundException notFoundException = assertThrows(
-                RunNotFoundException.class,
-                () -> repository.findById(3).get()
-        );
-
-        assertEquals("Run Not Found", notFoundException.getMessage());
+        var run = repository.findById(3);
+        assertTrue(run.isEmpty());
     }
 
     @Test

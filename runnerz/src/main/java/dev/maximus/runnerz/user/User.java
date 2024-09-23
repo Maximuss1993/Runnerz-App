@@ -1,12 +1,13 @@
 package dev.maximus.runnerz.user;
 
 public record User(
-		Integer id,
-		String name,
-		String email,
-		AdressOfUser adress,
-		String phone,
-		String website,
-		CompanyOfUser company) {
+        Integer id,
+        String name,
+        String username,
+        String email,
+        Address address,
+        String phone,
+        String website,
+        Company company) {
 
 }
